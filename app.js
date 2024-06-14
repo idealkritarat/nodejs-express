@@ -4,7 +4,7 @@ const PORT = process.env.PORT;
 const path = require("path");
 
 // Routers
-const productsRouter = require("./src/router/productsRouter");
+const productsRouter = require("./src/routes/productsRouter");
 
 // run index.html in '/public' directory
 app.use(express.static(path.join(__dirname, "/public/")));

@@ -187,14 +187,10 @@
                 <div class="row justify-content-center">
                     <div class="col-7">
                         <h1 class="text-center">Products</h1>
-                        <% products.forEach((product) => { %>
-                            <div>
-                                <% for (let key in product) { %>
-                                    <p><strong><%= key %>:</strong> <%= product[key] %></p>
-                                <% } %>
-                            </div>
-                            <hr/>
-                        <% }) %>
+                        <% products.map((product)=> {
+                            %><a href="/products/<%=product.id%>"><%=product.productTitle%></a><%
+                            %><p><%=product.productDescription%></p><%
+                        })%>
                     </div>
                 </div>
             </div>
