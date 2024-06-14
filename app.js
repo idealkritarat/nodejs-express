@@ -6,10 +6,10 @@ const path = require("path");
 app.use(express.static(path.join(__dirname,"/public/")));
 
 app.set("views","./src/views");
-app.set("views engine","ejs");
+app.set("view engine","ejs");
 
 app.get("/", (req, res) => {
-    res.send("Hello world");
+    res.render("index",{username: 'Kritarat',customer:["Hello","Hey","hi"]})
 });
 
 app.listen(PORT, ()=> {
