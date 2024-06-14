@@ -16,14 +16,17 @@ app.use("/products", productRouter);
 
 // ex. localhost:3001/products, localhost:3001/products/
 productRouter.route("/").get((req, res) => {
-    res.render("products", 
-        products
-    );
+    res.render("products", {
+        products,
+    });
 });
 
 // ex. localhost:3001/products/1
-productRouter.route("/1").get((req, res) => {
-    res.send("Hello world !! I'm Product1");
+productRouter.route("/:id").get((req, res) => {
+    const id = req.params.id;
+    res.render("product",{
+        product: products[id],
+    });
 });
 
 // root page: localhost:3001
