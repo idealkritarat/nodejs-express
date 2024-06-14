@@ -188,7 +188,7 @@
                     <div class="col-7">
                         <h1 class="text-center">Hello world</h1>
                         <% products.map((product)=> {
-                            %><h4><%=product.productTitle%></h4><%
+                            %><a href="/products/<%=product.id%>"><%=product.productTitle%></a><%
                             %><p><%=product.productDescription%></p><%
                         })%>
                     </div>
